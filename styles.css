@@ -1,29 +1,41 @@
 /* Global Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    box-sizing: border-box;
 }
 
-h1, h2 {
-    color: #333;
-    text-align: center;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
+/* Header */
 header {
-    background-color: #4CAF50;
+    background-color: #2C3E50;
     color: white;
-    padding: 20px;
+    text-align: center;
+    padding: 50px 0;
 }
 
+header h1 {
+    font-size: 3em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Section Styles */
 section {
-    margin: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 60px 0;
+    text-align: center;
     opacity: 0; /* Hidden initially */
     transition: opacity 0.5s ease-in-out; /* Fade-in effect */
 }
@@ -32,36 +44,75 @@ section.visible {
     opacity: 1; /* Visible when in view */
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
+/* About Section */
+#about {
+    background-color: #ECF0F1;
 }
 
-/* Links */
-a {
-    color: #4CAF50;
+/* Portfolio Section */
+#portfolio {
+    background-color: #FFFFFF;
+}
+
+.portfolio-items {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.portfolio-items .item {
+    background-color: #E74C3C;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-items .item h3 {
+    margin-bottom: 10px;
+}
+
+.portfolio-items .item a {
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
+/* Contact Section */
+#contact {
+    background-color: #2C3E50;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #34495E;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Links */
 a:hover {
     text-decoration: underline;
 }
 
-/* Layout */
-#shop, #discord, #youtube {
-    margin-top: 20px;
+/* Fade-in effect on scroll */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-/* Responsiveness */
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .portfolio-items {
+        flex-direction: column;
+        align-items: center;
     }
 
-    section {
-        margin: 10px;
+    .portfolio-items .item {
+        width: 80%;
+        margin-bottom: 20px;
     }
 }
