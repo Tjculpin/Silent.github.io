@@ -1,12 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silent's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #2C3E50;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 4px solid #34495E;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            padding: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+            text-align: center;
+            opacity: 0; /* Hidden initially */
+            transition: opacity 0.5s ease-in-out; /* Fade-in effect */
+        }
+
+        section.visible {
+            opacity: 1; /* Visible when in view */
+        }
+
+        /* About Section */
+        #about {
+            background-color: #ecf0f1;
+        }
+
+        #about p {
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background-color: #ffffff;
+        }
+
+        .portfolio-items {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-items .item {
+            background-color: #E74C3C;
+            padding: 30px;
+            color: white;
+            border-radius: 10px;
+            width: 30%;
+            min-width: 280px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-items .item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-items .item h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .portfolio-items .item a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #2C3E50;
+            color: white;
+        }
+
+        #contact p {
+            font-size: 1.2em;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #34495E;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Links */
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Fade-in effect on scroll */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .portfolio-items {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .portfolio-items .item {
+                width: 80%;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -18,7 +170,10 @@
     <section id="about" class="fade-in">
         <div class="container">
             <h2>About Me</h2>
-            <p>I’m Silent, a passionate creator specializing in t-shirt design, YouTube content, and Discord server creation. Here you can check out my work!</p>
+            <p>
+                Hi, I'm Silent, a passionate creator specializing in T-shirt design, YouTube content, and Discord server
+                creation. Explore my work below to see what I can do!
+            </p>
         </div>
     </section>
 
@@ -45,7 +200,7 @@
     <section id="contact" class="fade-in">
         <div class="container">
             <h2>Contact</h2>
-            <p>If you’re interested in working with me, feel free to get in touch!</p>
+            <p>If you're interested in working with me, feel free to get in touch!</p>
         </div>
     </section>
 
@@ -55,6 +210,18 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Scroll animations for fade-in effect
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 1.3) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
