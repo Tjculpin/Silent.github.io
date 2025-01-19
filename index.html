@@ -28,7 +28,6 @@
             overflow-x: hidden;
         }
 
-        /* Fancy Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -42,7 +41,6 @@
             border-radius: 5px;
         }
 
-        /* Hero Section */
         .hero {
             height: 100vh;
             background: linear-gradient(45deg, #0f172a, #1e293b);
@@ -102,7 +100,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Navigation */
         .nav {
             position: fixed;
             top: 0;
@@ -146,7 +143,6 @@
             width: 100%;
         }
 
-        /* Work Section */
         .work {
             padding: 8rem 2rem;
             background: var(--secondary);
@@ -161,55 +157,64 @@
         }
 
         .work-card {
-            background: var(--primary);
+            background: linear-gradient(145deg, var(--secondary), var(--primary));
             border-radius: 1rem;
-            overflow: hidden;
-            transition: transform 0.3s;
-            position: relative;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(59, 130, 246, 0.2);
         }
 
         .work-card:hover {
             transform: translateY(-10px);
-        }
-
-        .work-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
         }
 
         .work-content {
-            padding: 2rem;
+            text-align: center;
         }
 
         .work-content h3 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
             color: var(--highlight);
         }
 
-        /* Contact Section */
+        .work-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+
         .contact {
             padding: 8rem 2rem;
             background: var(--primary);
             text-align: center;
         }
 
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, var(--accent), var(--highlight));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background: var(--secondary);
-            border: none;
-            border-radius: 0.5rem;
+        .contact-text {
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.2rem;
+            line-height: 1.6;
             color: var(--text);
-            font-size: 1rem;
+        }
+
+        .contact-text a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: var(--highlight);
         }
 
         .btn {
@@ -221,6 +226,8 @@
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
             transition: transform 0.3s, background 0.3s;
         }
 
@@ -229,7 +236,6 @@
             background: var(--highlight);
         }
 
-        /* Social Links */
         .social-links {
             display: flex;
             justify-content: center;
@@ -248,7 +254,6 @@
             transform: translateY(-5px);
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 3rem;
@@ -283,24 +288,24 @@
     <section class="work" id="work">
         <div class="work-grid">
             <div class="work-card">
-                <img src="https://via.placeholder.com/400x200" alt="T-shirt Designs">
                 <div class="work-content">
+                    <h3><i class="fas fa-tshirt"></i></h3>
                     <h3>T-shirt Designs</h3>
                     <p>Custom designs that make a statement</p>
                     <a href="http://memoriesoverthings.etsy.com/" class="btn">Visit Shop</a>
                 </div>
             </div>
             <div class="work-card">
-                <img src="https://via.placeholder.com/400x200" alt="YouTube Content">
                 <div class="work-content">
+                    <h3><i class="fab fa-youtube"></i></h3>
                     <h3>YouTube Channel</h3>
                     <p>Engaging content for my audience</p>
                     <a href="https://youtube.com/@SilentAscendant" class="btn">Watch Videos</a>
                 </div>
             </div>
             <div class="work-card">
-                <img src="https://via.placeholder.com/400x200" alt="Discord Community">
                 <div class="work-content">
+                    <h3><i class="fab fa-discord"></i></h3>
                     <h3>Discord Community</h3>
                     <p>Join our growing community</p>
                     <a href="https://discord.gg/A64WanXwph" class="btn">Join Server</a>
@@ -311,21 +316,21 @@
 
     <section class="contact" id="contact">
         <h2>Get In Touch</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
+        <div class="contact-text">
+            <p>If you need to contact me, ping me in my 
+                <a href="https://discord.gg/A64WanXwph" target="_blank">Discord server</a> 
+                or email me at 
+                <a href="mailto:silentascendant@gmail.com">silentascendant@gmail.com</a>
+            </p>
+        </div>
         <div class="social-links">
-            <a href="https://youtube.com/@SilentAscendant"><i class="fab fa-youtube"></i></a>
-            <a href="https://discord.gg/A64WanXwph"><i class="fab fa-discord"></i></a>
-            <a href="http://memoriesoverthings.etsy.com/"><i class="fab fa-etsy"></i></a>
+            <a href="https://youtube.com/@SilentAscendant" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://discord.gg/A64WanXwph" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="http://memoriesoverthings.etsy.com/" target="_blank"><i class="fab fa-etsy"></i></a>
         </div>
     </section>
 
     <script>
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
